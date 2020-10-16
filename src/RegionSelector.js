@@ -1,12 +1,13 @@
 import React from 'react';
 
 const RegionSelector = props => {
-  let regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+  let regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania', 'Polar'];
   let Africa = [];
   let America = [];
   let Asia = [];
   let Europe = [];
   let Oceania = [];
+  let Polar = [];
 
   props.allCountries.map (item => {
     if (item.region === 'Africa') {
@@ -19,6 +20,8 @@ const RegionSelector = props => {
       Europe.push (item);
     } else if (item.region === 'Oceania') {
       Oceania.push (item);
+    } else if (item.region === 'Polar') {
+      Polar.push (item);
     }
     return [];
   });
@@ -49,6 +52,11 @@ const RegionSelector = props => {
       case 'Oceania':
         props.setRegion (Oceania);
         props.setCountries (Oceania);
+        props.setSelectedRegion (true);
+        break;
+      case 'Polar':
+        props.setRegion (Polar);
+        props.setCountries (Polar);
         props.setSelectedRegion (true);
         break;
       default:
