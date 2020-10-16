@@ -20,10 +20,11 @@ code {
   border-radius: 45% 45% 25% 0;
   box-shadow: 15px 25px 35px;
   margin: 1rem 2rem 1rem 2rem;
+  transition: 500ms;
 }
 .country:hover {
   cursor: pointer;
-  background-color: rgb(233, 231, 231);
+  transform: scale(1.05);
 }
 
 .imgC {
@@ -45,6 +46,13 @@ code {
   font-size: large;
   width: 20rem;
   height: 2rem;
+  outline: none;
+  border: none;
+  text-indent: 40px;
+  transition: 200ms;
+  color: gray;
+  letter-spacing: 1px;
+  box-shadow: 0px 0px 2px 0px;
 }
 .headerBar {
   width: 100%;
@@ -66,11 +74,15 @@ code {
   height: 6rem;
 }
 #regionSelector {
-  text-align: center;
-  width: 12rem;
-  height: 2.3rem;
   font-size: large;
-  text-align: center;
+  width: 15rem;
+  height: 2rem;
+  outline: none;
+  border: none;
+  transition: 200ms;
+  color: gray;
+  letter-spacing: 1px;
+  box-shadow: 0px 0px 2px 0px;
 }
 .oneCountry {
   width: max-content;
@@ -78,7 +90,9 @@ code {
   display: flex;
   line-height: 2rem;
   justify-content: center;
-  background-color: rgb(236, 236, 236);
+  padding-right: 2rem;
+  background-color: #c7cacc;
+  border-radius: 8px;
 }
 .capital {
   margin-top: 2rem;
@@ -90,6 +104,7 @@ code {
 #imgD {
   width: 500px;
   margin: 3rem;
+  border-radius: 8px;
 }
 #borders {
   display: flex;

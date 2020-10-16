@@ -9,14 +9,14 @@ props.setCountries (props.allCountries);
 
 }
 
-
 const handleBorderClick = (event)=>{
+  let selectedCountry;
 let key= event.target.id;
 props.allCountries.forEach((country=>{
   if(key===country.alpha3Code)
-  key=country;
+  selectedCountry = country;
 }))
-props.setDetails(key);
+props.setDetails(selectedCountry);
 console.log(key)
 }
 
@@ -37,10 +37,11 @@ console.log(key)
         <span><b>Subregion:</b> {props.details.subregion}</span>
         <span><b>Capital: </b>{props.details.capital}</span>
 
+
          <div id='borders'>
-      <span><b>Borders:</b>
+      <span><b>Borders :  </b>
         {props.details.borders.map (item => {
-          return <button class='borderBtn' onClick={handleBorderClick} id={item}>   {item}  </button>
+          return <button class='borderBtn' onClick={handleBorderClick} id={item}>  {item}  </button>
         })}
         </span>
       </div>

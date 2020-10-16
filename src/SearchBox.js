@@ -7,18 +7,20 @@ let filtered;
 
 const handleChange = e => {
  e.preventDefault ();
-  setInput (e.target.value);
-  if(props.selectedRegion)
+ let key = e.target.value;
+  setInput (key);
+  if(props.selectedRegion){
+    console.log ('The input ', key);
   filtered =props.region.filter (country =>
-  country.name.toLowerCase ().includes (input.toLowerCase ()) || country.capital.toLowerCase ().includes (input.toLowerCase ())
-  );
-else if(!props.selectedRegion)
+  country.name.toLowerCase ().includes (key.toLowerCase ()) || country.capital.toLowerCase ().includes (key.toLowerCase ())
+  )}
+else if(!props.selectedRegion){
 filtered = props.allCountries.filter (
   country =>
-    country.name.toLowerCase ().includes (input.toLowerCase ()) ||
-    country.capital.toLowerCase ().includes (input.toLowerCase ())
-);
-
+    country.name.toLowerCase ().includes (key.toLowerCase ()) ||
+    country.capital.toLowerCase ().includes (key.toLowerCase ())
+);}
+console.log(filtered);
 props.setCountries(filtered);
 
 
